@@ -6,4 +6,7 @@ autopep8
 fastapi
 uvicorn
 pymongo
-cryptography.fernet
+pydantic
+cryptography
+starlette
+pyjwt
