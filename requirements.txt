@@ -1,0 +1,9 @@
+# Env requirments
+pip
+autopep8
+
+# Application Requirments
+fastapi
+uvicorn
+pymongo
+cryptography.fernet
