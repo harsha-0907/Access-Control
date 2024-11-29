@@ -1,3 +1,4 @@
 .venv
 .idx
-secrets.py
+imp_secrets.py
+devsever.sh
