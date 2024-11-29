@@ -2,7 +2,7 @@
 
 import os
 from models import AuthData
-from secrets import *
+from imp_secrets import *
 
 def listDirectory(path):
     if os.path.exists(path):
@@ -15,16 +15,29 @@ def encryptData(data: AuthData) -> str:
     return token
 
 def decryptData(token: str) -> AuthData:
-    decrypted_data = crypto_obj.decrypt(token)
-    auth = AuthData()
-    auth.level = int(decryptData[:1])
-    auth.username = decryptData[1:]
-    return auth
+    try:
+        decrypted_data = crypto_obj.decrypt(token)
+        auth = AuthData(username=decrypted_data[1:], level=int(decrypted_data[0]))
+        print(auth.username, auth.level)
+        return auth
+    except Exception as e:
+        print("error: ", e)
+        return dict()
 
 def readFile(path):
-    if os.path.exists(path):
-        with open(path, 'r') as file:
-            data = file.read()
-        return data
-    else:
+    try:
+        if os.path.exists(path):
+            with open(path, 'r') as file:
+                data = file.read()
+            return data
+        else:
+            return ''
+    except Exception as e:
+        print("Error Reading File : ", e)
         return ''
+
+def removeExtension(name: str):
+    return name[:name.find('.')]
+
+def trimFile(name):
+    return removeExtension(name).capitalize()

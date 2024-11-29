@@ -25,5 +25,5 @@ class Resources(BaseModel):
     location: str
 
 class AuthData(BaseModel):
-    username: str
-    level: int
+    username: str = ""
+    level: int = 0
