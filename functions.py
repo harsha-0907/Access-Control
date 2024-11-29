@@ -12,11 +12,11 @@ def listDirectory(path):
 
 def encryptData(data: AuthData) -> str:
     token = crypto_obj.encrypt(bytes(str(data.level)+data.username, 'utf-8'))
-    return token
+    return token.decode('utf-8')
 
 def decryptData(token: str) -> AuthData:
     try:
-        decrypted_data = crypto_obj.decrypt(token)
+        decrypted_data = crypto_obj.decrypt(token).decode('utf-8')
         auth = AuthData(username=decrypted_data[1:], level=int(decrypted_data[0]))
         print(auth.username, auth.level)
         return auth
@@ -41,3 +41,4 @@ def removeExtension(name: str):
 
 def trimFile(name):
     return removeExtension(name).capitalize()
+

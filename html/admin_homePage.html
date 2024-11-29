@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Links</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Container */
+        .container {
+            text-align: center;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        /* Heading */
+        h1 {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        /* Resource Links Section */
+        .resource-links {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .resource-links a {
+            display: block;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .resource-links a:hover {
+            background-color: #2980b9;
+            transform: translateY(-5px);
+        }
+
+        .resource-links a:active {
+            background-color: #1c4f7c;
+            transform: translateY(0);
+        }
+
+        /* Register New User Section */
+        .register-link {
+            background-color: #28a745;
+            color: white;
+            text-decoration: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .register-link:hover {
+            background-color: #218838;
+            transform: translateY(-5px);
+        }
+
+        .register-link:active {
+            background-color: #1c7430;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .resource-links a,
+            .register-link {
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Explore Resources</h1>
+        <div class="resource-links">
+            <a href="/resource/Book-1.pdf">Resource 1 (Public)</a>
+            <a href="/resource/Book-2.pdf">Resource 2 (Level-2)</a>
+            <a href="/resource/Book-3.pdf">Resource 3 (Level-3)</a>
+            <a href="/resource/Book-4.pdf">Resource 4 (Confidential: Private)</a>
+        </div>
+
+        <!-- Link to Register New Users -->
+        <a href="/register" class="register-link">Register New User</a>
+    </div>
+
+</body>
+</html>
